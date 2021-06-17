@@ -1,4 +1,3 @@
-
 import random
 
 def UserWins():
@@ -17,7 +16,25 @@ numTies = 0
 while True:
 	print("\nRock, Paper, Scissors, Shoot!")
 	guessWord = str(input())
+	if guessWord == "q":
+		print("User Wins: " + str(numWins))
+		print("Computer Wins " + str(numLosses))
+		if(numWins > numLosses):
+			print("CONGRATS YOU ARE THE ALLTIME WINNER")
+		elif(numLosses > numWins):
+			print("YOU SUCK")
+		else:
+			print("THERE IS AN ALLTIME TIE BETWEEN YOU AND THE COMPUTER")
+		break
 	guessWord = guessWord.upper()
+	if guessWord == "R":
+		guessWord = "ROCK"
+	elif guessWord == "S":
+		guessWord = "SCISSORS"
+	elif guessWord == "P":
+		guessWord = "PAPER"
+	else:
+		pass
 	print("You chose " + guessWord)
 	possibilities = ["ROCK", "PAPER", "SCISSORS"]
 	computerGuess = random.choice(possibilities)
@@ -59,7 +76,3 @@ while True:
 			print("Number of ties: " + str(numTies))
 	else:
 		print("Invalid input")
-
-	
-
-
